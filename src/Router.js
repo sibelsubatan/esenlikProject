@@ -36,24 +36,24 @@ const StackRouter = ({ navigation }) => {
 
 
 
-// const AppDrawer = createDrawerNavigator();
-// const AppDrawerScreen = ({navigation}) => (
-//   <AppDrawer.Navigator
-//     screenOptions={{
-//       drawerStyle: {
-//         width: ww(1),
-//       },
-//     }}
-//     drawerContent={props => <DrawerMenu {...props} />}
-//   >
-//     <AppDrawer.Screen name="StackRouter" component={StackRouter} options={{ headerShown: false }}  navigationProps={navigation} />
-//   </AppDrawer.Navigator>
-// );
+const AppDrawer = createDrawerNavigator();
+const AppDrawerScreen = ({navigation}) => (
+  <AppDrawer.Navigator
+    screenOptions={{
+      drawerStyle: {
+        width: ww(1),
+      },
+    }}
+    drawerContent={props => <DrawerMenu {...props} />}
+  >
+    <AppDrawer.Screen name="StackRouter" component={StackRouter} options={{ headerShown: false }}  navigationProps={navigation} />
+  </AppDrawer.Navigator>
+);
 
 
 
 export default () => (
   <NavigationContainer>
-    <StackRouter />
+    <AppDrawerScreen />
   </NavigationContainer>
 );
